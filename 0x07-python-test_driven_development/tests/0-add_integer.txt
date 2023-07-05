@@ -15,18 +15,18 @@
 >>> add_integer()
 Traceback (most recent call last):
 TypeError: add_integer() missing 1 required positional argument: 'a'
->>> add_integer('a', 'b')
+>>> add_integer('m', 'r')
 Traceback (most recent call last):
-TypeError: a must be an integer
->>> add_integer('a', 42)
+TypeError: m must be an integer
+>>> add_integer('m', 24)
 Traceback (most recent call last):
-TypeError: a must be an integer
->>> add_integer('a')
+TypeError: m must be an integer
+>>> add_integer('m')
 Traceback (most recent call last):
-TypeError: a must be an integer
->>> add_integer(42, 'b')
+TypeError: m must be an integer
+>>> add_integer(24, 'r')
 Traceback (most recent call last):
-TypeError: b must be an integer
+TypeError: r must be an integer
 >>> add_integer(float('inf'), 0)
 Traceback (most recent call last):
 ...
