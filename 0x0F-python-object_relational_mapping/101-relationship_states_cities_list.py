@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-# Lists all States and corresponding Cities in the database hbtn_0e_101_usa.
-# Usage: ./101-relationship_states_cities_list.py <mysql username> /
-#                                                 <mysql password> /
-#                                                 <database name>
+"""lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -20,3 +19,4 @@ if __name__ == "__main__":
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
+    session.close()

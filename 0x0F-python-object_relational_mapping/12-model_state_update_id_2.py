@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-# Changes the name of the State object with id = 2 to
-# New Mexico in the database hbtn_0e_6_usa.
-# Usage: ./12-model_state_update_id_2.py <mysql username> /
-#                                        <mysql password> /
-#                                        <database name>
+"""
+Script that changes the name of a State object to the database
+Using module SQLAlchemy
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -19,3 +18,4 @@ if __name__ == "__main__":
     state = session.query(State).filter_by(id=2).first()
     state.name = "New Mexico"
     session.commit()
+    session.close()
