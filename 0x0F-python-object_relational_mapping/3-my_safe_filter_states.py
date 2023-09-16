@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-# Display all values in the states table of the database hbtn_0e_0_usa
-# name matches what supplied as argument.
-# Safe from SQL injections.
-# Usage: ./3-my_safe_filter_states.py <mysql username> \
-#                                     <mysql password> \
-#                                     <database name> \
-#                                     <state name searched>
+"""
+Script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument
+but safe from MySQL injections!
+"""
 import sys
 import MySQLdb
 
@@ -14,3 +12,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM `states`")
     [print(state) for state in cur.fetchall() if state[1] == sys.argv[4]]
+
+    # Clean up process
+    cur.close()
+    db.close()
